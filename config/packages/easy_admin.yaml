@@ -1,0 +1,12 @@
+# # config/packages/easy_admin.yaml
+# easy_admin:
+#     entities:
+#         Trips:
+#             # ...
+#             list:
+#                 fields:
+#                     - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+#             # ...
+#             show:
+#                 fields:
+#                     - { property: 'imageFile', type: 'vich_image', base_path: 'vich_uploader_image.html.twig' }

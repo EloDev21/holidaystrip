@@ -4,6 +4,11 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+       configuration:
+        name: "DevFusion"
+        from_email: no-reply@elo-fusion.com
+        to_email: martin.gilbert@dev-fusion.com
+    # app.path.circuit_images: /uploads/images/circuits
 
 services:
     # default configuration for services in *this* file

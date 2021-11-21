@@ -1,0 +1,10 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        circuits:
+           uri_prefix: 'images/circuits'
+           upload_destination: '%kernel.project_dir%/public/images/circuits'
+           inject_on_load: false
+           delete_on_update: true
+           delete_on_remove: true

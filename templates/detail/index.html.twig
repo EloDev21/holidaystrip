@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DetailController!{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4 mb-4">
+<div class="row mt-2 mb-4">
+
+
+    <div class="col md-8">
+        <img src="{{trip.image}}" class="card-img-top" alt="...">
+    </div>
+    <div class="col md-4 jumbotron">
+        <h1 class="text-center" style="color:wheat">{{trip.title}}</h1>
+        <p>{{trip.description |nl2br}}</p>
+        <div class="text-primary" style="font-size: 4rem;font-weight:bold; ">{{trip.price}}€
+                &nbsp;&nbsp;<a href="{{ path('cart_add', {id:trip.id}) }}" class="btn btn-warning">Ajouter au panier</a>
+    </div>
+                </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html.twig" %}
+{% block titre %}{% endblock %}
+
+{% block content %}
+<main>
+
+	<div class="container mt-5 align-center">
+		<h1>Formulaire de modification d'une annonce - Le Super Coin</h1>
+
+		{{form_start(formCircuit)}}
+		<div class="row">
+
+			<div class="col">
+				{{form_label(formCircuit.title, 'Titre du circuit')}}
+
+				<div class="col">
+					{{form_widget(formCircuit.title)}}
+				</div>
+			</div><br><br>
+			<div class="row">
+
+				<div class="col">
+					{{form_label(formCircuit.description,'Description du circuit ')}}
+
+					<div class="col">
+						{{form_widget(formCircuit.description)}}
+					</div>
+					<div class="row">
+
+						<div class="col">
+							{{form_label(formCircuit.minidescri,'Mini description du circuit')}}
+
+							<div class="col">
+								{{form_widget(formCircuit.minidescri)}}
+							</div>
+							<div class="row">
+
+								<div class="col">
+									{{form_label(formCircuit.price,'Prix du circuit')}}
+
+									<div class="col">
+										{{form_widget(formCircuit.price)}}
+									</div>
+
+
+								</div>
+							<div class="row">
+
+								<div class="col">
+									{{form_label(formCircuit.photo,'Photo du circuit ')}}
+
+									<div class="col">
+										{{form_widget(formCircuit.photo)}}
+									</div>
+
+
+								</div>
+								<div class="col">
+									{{form_label(formCircuit.imageFile,'Photo du circuit ')}}
+
+									<div class="col">
+										{{form_widget(formCircuit.imageFile)}}
+									</div>
+
+
+								</div>
+								<input type="submit" class="btn-btn-primary" value=" Modifier et sauvegarder">
+								{{form_end(formCircuit)}}
+
+							</div>
+                        </main>
+						{% endblock %}
+				

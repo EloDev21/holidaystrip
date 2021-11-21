@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Formulaire de contact{% endblock %}
+{% block css %}
+{# <link href="{{ asset('assets/css/contact.css') }}" rel="stylesheet" />  #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet" /> 
+<link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" /> 
+{# <link href="{{ asset('assets/css/contact.css') }}" rel="stylesheet" />  #}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5" style="display:flex;justify-content:space-around">
+{# on peut styler le message d'erreur 
+ #}
+
+ {% if not form.vars.valid %}
+ <div class="alert alert-danger">
+ Erreur dans l'ajout du formulaire 
+</div>
+{% endif %}
+ 
+{% for message in app.flashes('message_envoye') %}
+<div class="alert alert-success">
+    {{ message }}
+</div>
+{% endfor %}
+{{ form_start(formContact) }}
+
+<div class="row form-control justify-content-center
+">
+
+  <div class="col">
+    {{form_label(formContact.subject, 'Sujet:')}}
+
+    <div class="col">
+      {{form_widget(formContact.subject)}}
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col">
+      {{form_label(formContact.name,'Prénom(s) ')}}
+
+      <div class="col">
+        {{form_widget(formContact.name)}}
+      </div>
+    <div class="col">
+      {{form_label(formContact.surname,'Nom ')}}
+
+      <div class="col">
+        {{form_widget(formContact.surname)}}
+      </div>
+      <div class="row">
+
+        <div class="col">
+          {{form_label(formContact.email,'Adresse email')}}
+
+          <div class="col">
+            {{form_widget(formContact.email)}}
+          </div>
+      <div class="row">
+
+        <div class="col">
+          {{form_label(formContact.phone,'Numéro de téléphone')}}
+
+          <div class="col">
+            {{form_widget(formContact.phone)}}
+          </div>
+          <div class="row">
+
+            <div class="col">
+              {{form_label(formContact.message,'Entrez votre message')}}
+
+              <div class="col">
+                {{form_widget(formContact.message)}}
+              </div>
+              <br>
+              <input class="btn btn-warning  align-center" type="submit" value="Envoyer le mail.">
+
+              {{form_end(formContact)}}
+              </div>
+              {% endblock %}
+{# 
+
+
+<div class="title">
+<h1 class="text-center"><strong> Nous contacter</h1></strong>
+    </div>
+<div class="container mt-4 mb-4"style="display:flex;justify-content: center;">
+    <div class="jumbotron">
+    
+    <div class="row" style="justify-content: center;">
+        <div class="col-6" style="display: inline-block;" >
+        
+    <form  method="POST" style="text-align: center; " onsubmit="alert('Le message a été envoyé avec succès. Notre équipe vous reviendra dans les plus brefs !')" >
+    <div class="form-group">
+    <label for="subject" style="color:brown; font-size:larger;" >
+<strong> Sujet :</strong></label>
+    <select id="subject" name="subject" class="form-control" required="required">
+        <option value="na" selected="">Motif de contact</option>
+        <option value="service">General Customer Service</option>
+        <option value="suggestions">Suggestions</option>
+        <option value="product">Product Support</option>
+    </select>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label" style="color:brown; font-size:larger;" > <strong> Prénoms</strong> </label>
+  <input type="text" id="firstname" name="prenom" class="form-control"  placeholder="Entrez vos prénoms.." required>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label" style="color:brown; font-size:larger" ><strong> Nom </strong></label>
+  <input type="text" id="lastname" name="nom" class ="form-control"placeholder="Entrez votre nom.."required>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label" style="color:brown; font-size:larger"><strong>Email</strong></label>
+  <input type="email" id="email" name="email" class="form-control" placeholder="email@example.com"required>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label" style="color:brown; font-size:larger"><strong>Téléphone</strong></label>
+  <input type="text" id="telephone" name="telephone" class="form-control" placeholder="Entrez votre numéro de téléphone"required>
+</div>
+<div class="mb-3">
+  <label  class="form-label" style="color:brown; font-size:larger"><strong>Votre message :</strong> </label>
+  <textarea id="subject" class="form-control" rows="3" name="message" required placeholder="Merci d'entrer votre message. Nous vous reviendrons dans les plus brefs délais .." style="height:200px"></textarea>
+</div>
+
+<button type="" class="btn btn-warning" name="isSubmit" style="text-align:center" >Envoyer</button> 
+</form>
+</div>
+</div>
+</div>
+</div> #}
+
+
